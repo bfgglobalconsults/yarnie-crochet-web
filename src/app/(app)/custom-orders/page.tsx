@@ -24,44 +24,44 @@ export default function CustomOrdersPage() {
     {
       question: 'How long does it take to make a custom order?',
       answer:
-        'Custom orders typically take 2-4 weeks depending on the complexity and size of the piece. For larger projects like blankets, it may take 3-5 weeks. We'll provide you with an estimated timeline when you receive your quote, and we'll keep you updated throughout the process.',
+        `Custom orders typically take 2-4 weeks depending on the complexity and size of the piece. For larger projects like blankets, it may take 3-5 weeks. We'll provide you with an estimated timeline when you receive your quote, and we'll keep you updated throughout the process.`,
     },
     {
       question: 'Do you ship internationally?',
       answer:
-        'Currently, we ship within Nigeria with delivery to Kubwa, Gwarimpa, and Asokoro. We're working on expanding our shipping options to include international delivery soon!',
+        `Currently, we ship within Nigeria with delivery to Kubwa, Gwarimpa, and Asokoro. We're working on expanding our shipping options to include international delivery soon!`,
     },
     {
-      question: 'What yarn do you use?',
+      question: `What yarn do you use?`,
       answer:
         'We use premium quality yarn from trusted brands. All our materials are carefully selected for durability, softness, and color vibrancy. We primarily work with acrylic, cotton, and wool blends. If you have specific material preferences or allergies, please let us know in your custom order request.',
     },
     {
       question: 'Can I return or exchange items?',
       answer:
-        'Due to the handmade and custom nature of our products, we don't accept returns or exchanges on custom orders. However, if there's a defect or issue with your order, please contact us within 48 hours of delivery and we'll work to make it right.',
+        `Due to the handmade and custom nature of our products, we don't accept returns or exchanges on custom orders. However, if there's a defect or issue with your order, please contact us within 48 hours of delivery and we'll work to make it right.`,
     },
     {
       question: 'How do I care for my crochet items?',
       answer:
-        'Hand wash in cold water with mild detergent and lay flat to dry. Avoid wringing or twisting the fabric. For specific care instructions based on the yarn used, we'll include a care label with your item.',
+        `Hand wash in cold water with mild detergent and lay flat to dry. Avoid wringing or twisting the fabric. For specific care instructions based on the yarn used, we'll include a care label with your item.`,
     },
     {
-      question: 'Do you offer wholesale or bulk orders?',
+      question: `Do you offer wholesale or bulk orders?`,
       answer:
-        'Yes! We offer special pricing for wholesale and bulk orders. Please contact us directly with your requirements, and we'll provide a custom quote based on quantity, complexity, and timeline.',
+        `Yes! We offer special pricing for wholesale and bulk orders. Please contact us directly with your requirements, and we'll provide a custom quote based on quantity, complexity, and timeline.`,
     },
   ]
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-64 bg-gradient-to-r from-gold/30 to-cream flex items-center justify-center">
+      <section className="relative h-64 bg-yellow-300 flex items-center justify-center">
         <div className="container text-center">
           <h1 className="text-5xl font-bold mb-4">Get in Touch</h1>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Have a question or want to discuss a custom order? We'd love to hear from you! Fill out
-            the form below and we'll get back to you within 24 hours.
+            Have a question or want to discuss a custom order? We&apos;d love to hear from you! Fill out
+            the form below and we&apos;ll get back to you within 24 hours.
           </p>
         </div>
       </section>
@@ -74,8 +74,8 @@ export default function CustomOrdersPage() {
             <div>
               <h2 className="text-3xl font-bold mb-8 text-gold">Get your produce on the way!</h2>
               <p className="text-gray-600 mb-8 leading-relaxed">
-                Whether you're looking for a custom crochet piece or have questions about our
-                products, we're here to help. Reach out to us through any of the channels below.
+                Whether you&apos;lre looking for a custom crochet piece or have questions about our
+                products, we&apos;re here to help. Reach out to us through any of the channels below.
               </p>
 
               <div className="space-y-6">
@@ -195,7 +195,7 @@ export default function CustomOrdersPage() {
             <div className="bg-cream p-8 rounded-lg">
               <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
               <p className="text-gray-600 mb-6 text-sm">
-                Fill out the form below and we'll get back to you within 24 hours
+                Fill out the form below and we&apos;ll get back to you within 24 hours
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -314,8 +314,8 @@ export default function CustomOrdersPage() {
           <div className="text-center mt-12">
             <p className="text-xl font-semibold mb-4">Still have questions?</p>
             <p className="text-gray-600 mb-6">
-              If you didn't find the answer you were looking for, feel free to reach out to us
-              directly. We're here to help!
+              If you didn&apos;t find the answer you were looking for, feel free to reach out to us
+              directly. We&apos;re here to help!
             </p>
             <a
               href="mailto:info@yarnie.com"
