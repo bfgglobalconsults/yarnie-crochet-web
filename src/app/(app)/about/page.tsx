@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-64 bg-gradient-to-r from-gold/30 to-cream flex items-center justify-center">
+      <section className="relative h-64 bg-linear-to-r from-gold/30 to-cream flex items-center justify-center">
         <div className="container text-center">
           <h1 className="text-5xl font-bold mb-4">About CrochetCraft</h1>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -18,15 +18,15 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="container">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden shadow-xl bg-gradient-to-br from-gold/20 to-cream flex items-center justify-center">
+            <div className="relative aspect-4/3 rounded-lg overflow-hidden shadow-xl bg-gradient-to-br from-gold/20 to-cream flex items-center justify-center">
               <span className="text-6xl">👩‍🎨</span>
             </div>
             <div>
               <h2 className="text-4xl font-bold mb-6">Meet the maker</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  Hi, I'm the heart and hands behind CrochetCraft. My journey with crochet began
-                  years ago when I picked up a hook and some yarn, and I haven't looked back since.
+                  Hi, I&apos;m the heart and hands behind CrochetCraft. My journey with crochet began
+                  years ago when I picked up a hook and some yarn, and I haven&apos;t looked back since.
                 </p>
                 <p>
                   What started as a hobby quickly became a passion. I fell in love with the rhythm
@@ -78,9 +78,9 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="py-16 bg-white text-center">
         <div className="container">
-          <h2 className="text-3xl font-bold mb-4">Can't find what you're looking for?</h2>
+          <h2 className="text-3xl font-bold mb-4">Can&apos;t find what you&apos;re looking for?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            We'd love to create something custom just for you!
+            We&apos;d love to create something custom just for you!
           </p>
           <Link
             href="/custom-orders"

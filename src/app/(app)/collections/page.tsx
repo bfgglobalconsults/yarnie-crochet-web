@@ -133,7 +133,7 @@ export default async function CollectionsPage() {
       {/* Newsletter CTA */}
       <section className="py-16 bg-white">
         <div className="container text-center">
-          <h2 className="text-3xl font-bold mb-4">Can't find what you're looking for?</h2>
+          <h2 className="text-3xl font-bold mb-4">Can&apos;t find what you&apos;re looking for?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
             Subscribe to our newsletter and be the first to know about new arrivals, exclusive
             offers, and special promotions!
