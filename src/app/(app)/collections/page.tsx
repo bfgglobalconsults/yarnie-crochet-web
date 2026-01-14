@@ -29,7 +29,7 @@ export default async function CollectionsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-64 bg-gradient-to-r from-gold/20 to-cream flex items-center justify-center">
+      <section className="relative h-64 bg-linear-to-r from-gold/20 to-cream flex items-center justify-center">
         <div className="container text-center">
           <h1 className="text-5xl font-bold mb-4">Our Collections</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
