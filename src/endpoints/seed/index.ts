@@ -140,16 +140,7 @@ export const seed = async ({
       ),
     ])
 
-  const [
-    customer,
-    imageHat,
-    imageTshirtBlack,
-    imageTshirtWhite,
-    imageHero,
-    accessoriesCategory,
-    tshirtsCategory,
-    hatsCategory,
-  ] = await Promise.all([
+  const [customer, imageHat, imageTshirtBlack, imageTshirtWhite, imageHero] = await Promise.all([
     payload.create({
       collection: 'users',
       data: {
@@ -179,6 +170,10 @@ export const seed = async ({
       data: imageHero1Data,
       file: heroBuffer,
     }),
+  ])
+
+  // Create collections
+  const createdCollections = await Promise.all(
     categories.map((category) =>
       payload.create({
         collection: 'collections',
@@ -191,7 +186,9 @@ export const seed = async ({
         },
       }),
     ),
-  ])
+  )
+
+  const [accessoriesCategory, tshirtsCategory, hatsCategory] = createdCollections
 
   payload.logger.info(`— Seeding variant types and options...`)
 
