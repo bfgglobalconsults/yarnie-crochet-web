@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function CartPage() {
-  const { cart, updateItemQuantity, removeItem } = useCart()
+  const { cart, incrementItem, decrementItem, removeItem } = useCart()
   const [promoCode, setPromoCode] = useState('')
 
   const subtotal =
@@ -20,13 +20,16 @@ export default function CartPage() {
   const deliveryFee = 1500 // $15 in cents
   const total = subtotal + deliveryFee
 
-  const handleQuantityChange = (itemId: string, newQuantity: number) => {
-    if (newQuantity < 1) return
-    updateItemQuantity({ itemId, quantity: newQuantity })
+  const handleIncrement = (itemId: string) => {
+    incrementItem(itemId)
+  }
+
+  const handleDecrement = (itemId: string) => {
+    decrementItem(itemId)
   }
 
   const handleRemoveItem = (itemId: string) => {
-    removeItem({ itemId })
+    removeItem(itemId)
   }
 
   const handleApplyPromo = () => {
@@ -104,7 +107,7 @@ export default function CartPage() {
 
                         <div className="flex items-center gap-3 border border-gray-300 rounded-lg">
                           <button
-                            onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                            onClick={() => handleDecrement(item.id)}
                             className="px-3 py-2 hover:bg-gray-100 transition-colors"
                           >
                             <Minus className="w-4 h-4" />
@@ -113,7 +116,7 @@ export default function CartPage() {
                             {item.quantity}
                           </span>
                           <button
-                            onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                            onClick={() => handleIncrement(item.id)}
                             className="px-3 py-2 hover:bg-gray-100 transition-colors"
                           >
                             <Plus className="w-4 h-4" />
