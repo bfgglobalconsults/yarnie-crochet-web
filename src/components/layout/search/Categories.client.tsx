@@ -1,12 +1,12 @@
 'use client'
 import React, { useCallback, useMemo } from 'react'
 
-import { Category } from '@/payload-types'
-import { usePathname, useSearchParams, useRouter } from 'next/navigation'
+import { Collection } from '@/payload-types'
 import clsx from 'clsx'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 type Props = {
-  category: Category
+  category: Collection
 }
 
 export const CategoryItem: React.FC<Props> = ({ category }) => {
@@ -15,16 +15,16 @@ export const CategoryItem: React.FC<Props> = ({ category }) => {
   const searchParams = useSearchParams()
 
   const isActive = useMemo(() => {
-    return searchParams.get('category') === String(category.id)
+    return searchParams.get('collection') === String(category.id)
   }, [category.id, searchParams])
 
   const setQuery = useCallback(() => {
     const params = new URLSearchParams(searchParams.toString())
 
     if (isActive) {
-      params.delete('category')
+      params.delete('collection')
     } else {
-      params.set('category', String(category.id))
+      params.set('collection', String(category.id))
     }
 
     const newParams = params.toString()
