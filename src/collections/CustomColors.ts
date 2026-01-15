@@ -36,7 +36,7 @@ export const CustomColors: CollectionConfig = {
         description: 'Hex color code (e.g., #F5E6D3)',
         placeholder: '#FFFFFF',
       },
-      validate: (value) => {
+      validate: (value: string) => {
         if (!/^#[0-9A-F]{6}$/i.test(value)) {
           return 'Please enter a valid hex color code (e.g., #FFFFFF)'
         }
