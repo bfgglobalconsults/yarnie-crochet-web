@@ -458,34 +458,15 @@ export const seed = async ({
   const orderInCompleted = await payload.create({
     collection: 'orders',
     data: {
-      amount: 7499,
-      currency: 'USD',
+      orderNumber: `ORD-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`,
       customer: customer.id,
+      customerInfo: {
+        name: baseAddressUSData.firstName + ' ' + baseAddressUSData.lastName,
+        email: 'customer@example.com',
+        phone: baseAddressUSData.phone || '',
+      },
       shippingAddress: baseAddressUSData,
-      items: [
-        {
-          product: productTshirt.id,
-          variant: smallTshirtHoodieVariant.id,
-          quantity: 1,
-        },
-        {
-          product: productTshirt.id,
-          variant: mediumTshirtHoodieVariant.id,
-          quantity: 1,
-        },
-      ],
-      status: 'completed',
-      transactions: [succeededTransaction.id],
-    },
-  })
-
-  const orderInProcessing = await payload.create({
-    collection: 'orders',
-    data: {
-      amount: 7499,
-      currency: 'USD',
-      customer: customer.id,
-      shippingAddress: baseAddressUSData,
+      deliveryLocation: 'kubwa',
       items: [
         {
           product: productTshirt.id,
@@ -499,7 +480,46 @@ export const seed = async ({
         },
       ],
       status: 'processing',
-      transactions: [succeededTransaction.id],
+      paymentStatus: 'paid',
+      paymentMethod: 'card',
+      subtotal: 7499,
+      discount: 0,
+      shippingCost: 0,
+      total: 7499,
+    },
+  })
+
+  const orderInProcessing = await payload.create({
+    collection: 'orders',
+    data: {
+      orderNumber: `ORD-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`,
+      customer: customer.id,
+      customerInfo: {
+        name: baseAddressUSData.firstName + ' ' + baseAddressUSData.lastName,
+        email: 'customer@example.com',
+        phone: baseAddressUSData.phone || '',
+      },
+      shippingAddress: baseAddressUSData,
+      deliveryLocation: 'gwarimpa',
+      items: [
+        {
+          product: productTshirt.id,
+          variant: smallTshirtHoodieVariant.id,
+          quantity: 1,
+        },
+        {
+          product: productTshirt.id,
+          variant: mediumTshirtHoodieVariant.id,
+          quantity: 1,
+        },
+      ],
+      status: 'processing',
+      paymentStatus: 'paid',
+      paymentMethod: 'card',
+      subtotal: 7499,
+      discount: 0,
+      shippingCost: 0,
+      total: 7499,
     },
   })
 
