@@ -1,25 +1,26 @@
 import configPromise from '@payload-config'
-import { getPayload } from 'payload'
 import clsx from 'clsx'
+import { getPayload } from 'payload'
 import React, { Suspense } from 'react'
 
 import { Item } from './Item'
 
 async function List() {
   const payload = await getPayload({ config: configPromise })
-  const categoriesData = await payload.find({
-    collection: 'categories',
-    sort: 'title',
-    select: {
-      title: true,
-      slug: true,
+  const collectionsData = await payload.find({
+    collection: 'collections',
+    sort: 'order',
+    where: {
+      status: {
+        equals: 'active',
+      },
     },
   })
 
-  const categories = categoriesData.docs?.map((category) => {
+  const collections = collectionsData.docs?.map((collection) => {
     return {
-      href: `/shop/${category.slug}`,
-      title: category.title,
+      href: `/collections/${collection.slug}`,
+      title: collection.title,
     }
   })
 
@@ -27,10 +28,10 @@ async function List() {
     <React.Fragment>
       <nav>
         <ul className="flex gap-3">
-          <Item title="All" href="/shop" />
+          <Item title="All" href="/collections" />
           <Suspense fallback={null}>
-            {categories.map((category) => {
-              return <Item {...category} key={category.href} />
+            {collections.map((collection) => {
+              return <Item {...collection} key={collection.href} />
             })}
           </Suspense>
         </ul>
