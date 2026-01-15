@@ -13,7 +13,7 @@ export default function CartPage() {
 
   const subtotal =
     cart?.items?.reduce((total, item) => {
-      const price = typeof item.product === 'object' ? item.product.priceInUSD || 0 : 0
+      const price = item.product && typeof item.product === 'object' ? item.product.priceInUSD || 0 : 0
       return total + price * item.quantity
     }, 0) || 0
 
@@ -40,7 +40,7 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gold/30 to-cream py-16">
+      <section className="bg-linear-to-r from-gold/30 to-cream py-16">
         <div className="container text-center">
           <h1 className="text-5xl font-bold mb-4">Shopping Cart</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
@@ -79,7 +79,7 @@ export default function CartPage() {
                       className="flex gap-4 p-4 bg-white border border-gray-200 rounded-lg"
                     >
                       {/* Product Image */}
-                      <div className="w-24 h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden">
+                      <div className="w-24 h-24 shrink-0 bg-gray-100 rounded-lg overflow-hidden">
                         {image && <Media resource={image} className="w-full h-full object-cover" />}
                       </div>
 
@@ -99,7 +99,7 @@ export default function CartPage() {
                       {/* Quantity Controls */}
                       <div className="flex flex-col items-end justify-between">
                         <button
-                          onClick={() => handleRemoveItem(item.id)}
+                          onClick={() => item.id && handleRemoveItem(item.id)}
                           className="text-red-500 hover:text-red-700 transition-colors"
                         >
                           <Trash2 className="w-5 h-5" />
@@ -107,16 +107,16 @@ export default function CartPage() {
 
                         <div className="flex items-center gap-3 border border-gray-300 rounded-lg">
                           <button
-                            onClick={() => handleDecrement(item.id)}
+                            onClick={() => item.id && handleDecrement(item.id)}
                             className="px-3 py-2 hover:bg-gray-100 transition-colors"
                           >
                             <Minus className="w-4 h-4" />
                           </button>
-                          <span className="font-medium min-w-[20px] text-center">
+                          <span className="font-medium min-w-5 text-center">
                             {item.quantity}
                           </span>
                           <button
-                            onClick={() => handleIncrement(item.id)}
+                            onClick={() => item.id && handleIncrement(item.id)}
                             className="px-3 py-2 hover:bg-gray-100 transition-colors"
                           >
                             <Plus className="w-4 h-4" />
