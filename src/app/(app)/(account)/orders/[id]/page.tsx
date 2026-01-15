@@ -1,19 +1,19 @@
 import type { Order } from '@/payload-types'
 import type { Metadata } from 'next'
 
+import { OrderStatus } from '@/components/OrderStatus'
 import { Price } from '@/components/Price'
+import { ProductItem } from '@/components/ProductItem'
+import { AddressItem } from '@/components/addresses/AddressItem'
 import { Button } from '@/components/ui/button'
 import { formatDateTime } from '@/utilities/formatDateTime'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+import configPromise from '@payload-config'
+import { ChevronLeftIcon } from 'lucide-react'
+import { headers as getHeaders } from 'next/headers.js'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ChevronLeftIcon } from 'lucide-react'
-import { ProductItem } from '@/components/ProductItem'
-import { headers as getHeaders } from 'next/headers.js'
-import configPromise from '@payload-config'
 import { getPayload } from 'payload'
-import { OrderStatus } from '@/components/OrderStatus'
-import { AddressItem } from '@/components/addresses/AddressItem'
 
 export const dynamic = 'force-dynamic'
 
@@ -67,17 +67,6 @@ export default async function Order({ params, searchParams }: PageProps) {
             : []),
         ],
       },
-      select: {
-        amount: true,
-        currency: true,
-        items: true,
-        customerEmail: true,
-        customer: true,
-        status: true,
-        createdAt: true,
-        updatedAt: true,
-        shippingAddress: true,
-      },
     })
 
     const canAccessAsGuest =
@@ -95,7 +84,7 @@ export default async function Order({ params, searchParams }: PageProps) {
         : orderResult.customer) === user.id
 
     if (orderResult && (canAccessAsGuest || canAccessAsUser)) {
-      order = orderResult
+      order = orderResult as Order
     }
   } catch (error) {
     console.error(error)
