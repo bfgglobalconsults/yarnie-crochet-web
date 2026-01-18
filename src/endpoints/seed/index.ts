@@ -465,7 +465,6 @@ export const seed = async ({
         email: 'customer@example.com',
         phone: baseAddressUSData.phone || '',
       },
-      shippingAddress: baseAddressUSData,
       deliveryLocation: 'kubwa',
       items: [
         {
@@ -480,12 +479,8 @@ export const seed = async ({
         },
       ],
       status: 'processing',
-      paymentStatus: 'paid',
-      paymentMethod: 'card',
-      subtotal: 7499,
-      discount: 0,
-      shippingCost: 0,
-      total: 7499,
+      amount: 7499,
+      currency: 'USD',
     },
   })
 
@@ -499,7 +494,6 @@ export const seed = async ({
         email: 'customer@example.com',
         phone: baseAddressUSData.phone || '',
       },
-      shippingAddress: baseAddressUSData,
       deliveryLocation: 'gwarimpa',
       items: [
         {
@@ -514,12 +508,8 @@ export const seed = async ({
         },
       ],
       status: 'processing',
-      paymentStatus: 'paid',
-      paymentMethod: 'card',
-      subtotal: 7499,
-      discount: 0,
-      shippingCost: 0,
-      total: 7499,
+      amount: 7499,
+      currency: 'USD',
     },
   })
 
