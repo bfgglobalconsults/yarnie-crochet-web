@@ -48,6 +48,7 @@ export function WhyCrochet() {
                 alt="Handcrafted crochet pieces with love and care"
                 fill
                 className="object-cover"
+                unoptimized
               />
             </div>
           </div>
