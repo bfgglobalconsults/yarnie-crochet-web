@@ -3,6 +3,7 @@
 import type { StaticImageData } from 'next/image'
 
 import { cn } from '@/utilities/cn'
+import { getClientSideURL } from '@/utilities/getURL'
 import NextImage from 'next/image'
 import React from 'react'
 
