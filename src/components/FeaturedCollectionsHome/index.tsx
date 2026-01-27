@@ -39,8 +39,8 @@ export async function FeaturedCollectionsHome() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {featuredCollections.docs.map((collection) => {
-              const itemCount = Math.floor(Math.random() * 20) + 10 // Random count for demo
+            {featuredCollections.docs.map((collection, index) => {
+              const itemCount = collection.itemCount || (index + 1) * 12 // Use actual count or predictable fallback
 
               return (
                 <Link

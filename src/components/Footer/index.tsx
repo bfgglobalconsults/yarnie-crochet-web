@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -18,8 +19,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
             <Link href="/" className="inline-block mb-6">
-              <div className="text-2xl font-bold text-gold">YARNIE</div>
-              <div className="text-sm text-gray-400">BEAUTY AND CROCHET</div>
+              <Image
+                src="/assets/yarnie-logo.png"
+                alt="Yarnie - Beauty and Crochet"
+                width={120}
+                height={60}
+                className="object-contain"
+              />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Handmade crochet pieces crafted with love, patience, and attention to detail. Each

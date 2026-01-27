@@ -10,8 +10,8 @@ export function WhyCrochet() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black">Why Crochet?</h2>
 
             <p className="text-gray-900 mb-6 leading-relaxed text-lg">
-              Crochet isn&apos;t just a craft—it&apos;s an art form that carries warmth, patience, and love
-              into every stitch.
+              Crochet isn&apos;t just a craft—it&apos;s an art form that carries warmth, patience,
+              and love into every stitch.
             </p>
 
             <p className="text-gray-900 mb-6 leading-relaxed">
@@ -44,8 +44,8 @@ export function WhyCrochet() {
           <div className="relative">
             <div className="aspect-[4/3] relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/assets/why-crochet.jpg"
-                alt="Artisan crocheting a beautiful orange piece"
+                src="/assets/about-image.jpg"
+                alt="Handcrafted crochet pieces with love and care"
                 fill
                 className="object-cover"
               />

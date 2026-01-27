@@ -22,9 +22,9 @@ export function Newsletter() {
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-6">
-            <span className="text-6xl">🧶</span>
+            <span className="text-6xl"></span>
           </div>
-          <h2 className="text-4xl font-bold mb-4">Join the Crochet Circle 🧶</h2>
+          <h2 className="text-4xl font-bold mb-4">Join the Crochet Circle </h2>
           <p className="text-[#4B5563] mb-8 text-lg">
             Get patterns, offers, and cozy inspiration delivered to your inbox. Plus, receive a free
             beginner&apos;s crochet pattern when you sign up!
