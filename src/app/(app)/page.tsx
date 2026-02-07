@@ -1,7 +1,8 @@
 import { BestsellersSection } from '@/components/BestsellersSection'
 import { CustomOrderSection } from '@/components/CustomOrderSection'
-import { FAQ } from '@/components/FAQ'
+import { FeaturedCollectionsHome } from '@/components/FeaturedCollectionsHome'
 import { Hero } from '@/components/Hero'
+import { HomeFAQ } from '@/components/HomeFAQ'
 import { Newsletter } from '@/components/Newsletter'
 import { Testimonials } from '@/components/Testimonials'
 import { WhyCrochet } from '@/components/WhyCrochet'
@@ -14,11 +15,12 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <FeaturedCollectionsHome />
       <WhyCrochet />
       <BestsellersSection />
       <CustomOrderSection />
       <Testimonials />
-      <FAQ />
+      <HomeFAQ />
 
       <Newsletter />
     </>
