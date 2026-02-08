@@ -1,14 +1,14 @@
 'use client'
 import type { Product, Variant } from '@/payload-types'
 
-import { RichText } from '@/components/RichText'
 import { AddToCart } from '@/components/Cart/AddToCart'
 import { Price } from '@/components/Price'
-import React, { Suspense } from 'react'
+import { RichText } from '@/components/RichText'
+import { Suspense } from 'react'
 
-import { VariantSelector } from './VariantSelector'
-import { useCurrency } from '@payloadcms/plugin-ecommerce/client/react'
 import { StockIndicator } from '@/components/product/StockIndicator'
+import { useCurrency } from '@payloadcms/plugin-ecommerce/client/react'
+import { VariantSelector } from './VariantSelector'
 
 export function ProductDescription({ product }: { product: Product }) {
   const { currency } = useCurrency()
@@ -51,6 +51,11 @@ export function ProductDescription({ product }: { product: Product }) {
     amount = product[priceField]
   }
 
+  // Get product collections for display
+  const productCollections = product.collections?.filter(
+    (collection) => typeof collection === 'object',
+  )
+
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
@@ -63,6 +68,26 @@ export function ProductDescription({ product }: { product: Product }) {
           )}
         </div>
       </div>
+
+      {/* Collection Tags */}
+      {productCollections && productCollections.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {productCollections.map((collection) => {
+            if (typeof collection === 'object') {
+              return (
+                <span
+                  key={collection.id}
+                  className="inline-block bg-gold/10 text-gold px-3 py-1 rounded-full text-sm font-medium"
+                >
+                  {collection.title}
+                </span>
+              )
+            }
+            return null
+          })}
+        </div>
+      )}
+
       {product.description ? (
         <RichText className="" data={product.description} enableGutter={false} />
       ) : null}

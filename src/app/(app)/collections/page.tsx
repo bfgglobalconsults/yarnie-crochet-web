@@ -44,14 +44,20 @@ export default async function CollectionsPage() {
       <section className="bg-white border-b">
         <div className="container py-6">
           <div className="flex gap-4 flex-wrap justify-center">
-            <button className="px-6 py-2 bg-gold text-white rounded-full font-medium">All</button>
+            <Link
+              href="/collections"
+              className="px-6 py-2 bg-gold text-white rounded-full font-medium"
+            >
+              All
+            </Link>
             {collections.docs.map((collection) => (
-              <button
+              <Link
                 key={collection.id}
+                href={`/collections/${collection.slug}`}
                 className="px-6 py-2 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors"
               >
                 {collection.title}
-              </button>
+              </Link>
             ))}
           </div>
         </div>
