@@ -158,7 +158,7 @@ export function FAQ() {
           </div>
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Still have questions?</h3>
           <p className="text-gray-600 mb-6">
-            I'm here to help! Feel free to reach out with any questions about custom orders, care
+            I&apos;m here to help! Feel free to reach out with any questions about custom orders, care
             instructions, or anything else.
           </p>
           <Link
