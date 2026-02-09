@@ -66,9 +66,7 @@ export async function FeaturedCollectionsHome() {
       <section className="py-16 bg-white text-black">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-              Featured Collections
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Featured Collections</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
               Discover our carefully curated collections, each piece crafted with love and attention
               to detail
@@ -89,7 +87,7 @@ export async function FeaturedCollectionsHome() {
                   <div className="aspect-[3/4] relative overflow-hidden">
                     {isPlaceholder ? (
                       <Image
-                        src={collection.image}
+                        src={collection.image as string}
                         alt={collection.title}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -137,9 +135,7 @@ export async function FeaturedCollectionsHome() {
       <section className="py-16 bg-white text-black">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
-              Featured Collections
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Featured Collections</h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Discover our carefully curated collections, each piece crafted with love and attention
               to detail
