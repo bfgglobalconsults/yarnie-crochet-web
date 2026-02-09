@@ -43,6 +43,7 @@ export default function AboutPage() {
                 alt="About CrochetCraft - Our handmade crochet process"
                 fill
                 className="object-cover"
+                unoptimized
               />
             </div>
             <div>

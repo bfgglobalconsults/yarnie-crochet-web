@@ -3,6 +3,7 @@
 import type { StaticImageData } from 'next/image'
 
 import { cn } from '@/utilities/cn'
+import { getClientSideURL } from '@/utilities/getURL'
 import NextImage from 'next/image'
 import React from 'react'
 
@@ -48,8 +49,9 @@ export const Image: React.FC<MediaProps> = (props) => {
     alt = altFromResource
 
     const filename = fullFilename
+    const serverURL = getClientSideURL()
 
-    src = `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`
+    src = `${serverURL}${url}`
   }
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes
