@@ -16,6 +16,8 @@ export default async function CollectionsPage() {
     sort: 'order',
   })
 
+  console.log('Collections found:', collections.docs.length)
+
   const products = await payload.find({
     collection: 'products',
     limit: 12,
@@ -26,10 +28,12 @@ export default async function CollectionsPage() {
     },
   })
 
+  console.log('Products found:', products.docs.length)
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-64 bg-linear-to-r from-gold/20 to-cream flex items-center justify-center">
+      <section className="relative h-64 bg-linear-to-r from-gold/20 to-cream flex items-center justify-center my-8">
         <div className="container text-center">
           <h1 className="text-5xl font-bold mb-4">Our Collections</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">

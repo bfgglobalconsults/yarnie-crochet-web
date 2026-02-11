@@ -48,15 +48,14 @@ export async function FeaturedCollectionsHome() {
       collection: 'featuredCollections',
       limit: 4,
       where: {
-        featured: {
-          equals: true,
-        },
         status: {
           equals: 'active',
         },
       },
-      sort: 'featuredOrder',
+      sort: '-featuredOrder',
     })
+
+    console.log('Featured collections found:', featuredCollections.docs.length)
 
     // Use admin collections if available, otherwise use placeholders
     const hasCollections = featuredCollections.docs && featuredCollections.docs.length > 0
